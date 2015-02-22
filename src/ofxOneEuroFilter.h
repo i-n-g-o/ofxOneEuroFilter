@@ -23,10 +23,6 @@ static const TimeStamp UndefinedTime = -1.0 ;
 // -----------------------------------------------------------------
 class LowPassFilter {
 	
-	double y, a, s ;
-	bool initialized ;
-	
-	
 public:
 	
 	LowPassFilter(double alpha, double initval=0.0) {
@@ -67,6 +63,12 @@ public:
 		return y ;
 	}
 	
+	
+private:
+	
+	double y, a, s ;
+	bool initialized ;
+	
 };
 
 
@@ -89,6 +91,7 @@ public:
 	void setMinCutoff(double mc);
 	void setBeta(double b);
 	void setDerivateCutoff(double dc);
+
 	
 private:
 	double alpha(double cutoff);
