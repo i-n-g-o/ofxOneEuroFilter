@@ -13,7 +13,6 @@
 #pragma once
 
 #include <cmath>
-#include <stdexcept>
 
 typedef double TimeStamp ; // in seconds
 
@@ -33,7 +32,7 @@ public:
 	
 	void setAlpha(double alpha) {
 		if (alpha<=0.0 || alpha>1.0)
-			throw std::range_error("alpha should be in (0.0., 1.0]") ;
+			return;
 		a = alpha ;
 	}
 	

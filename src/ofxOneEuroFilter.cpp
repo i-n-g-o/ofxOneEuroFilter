@@ -70,12 +70,12 @@ double ofxOneEuroFilter::alpha(double cutoff) {
 }
 
 void ofxOneEuroFilter::setFrequency(double f) {
-	if (f<=0) throw std::range_error("freq should be >0") ;
+	if (f<=0) return;
 	freq = f ;
 }
 
 void ofxOneEuroFilter::setMinCutoff(double mc) {
-	if (mc<=0) throw std::range_error("mincutoff should be >0") ;
+	if (mc<=0) return;
 	mincutoff = mc ;
 	
 	x.setAlpha(alpha(mincutoff));
@@ -86,7 +86,7 @@ void ofxOneEuroFilter::setBeta(double b) {
 }
 
 void ofxOneEuroFilter::setDerivateCutoff(double dc) {
-	if (dc<=0) throw std::range_error("dcutoff should be >0") ;
+	if (dc<=0) return;
 	dcutoff = dc ;
 	
 	dx.setAlpha(alpha(dcutoff));
